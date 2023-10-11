@@ -1,4 +1,5 @@
-Program RPN_calculator:
+was made on Oct 11, 2023
+# Program RPN_calculator:
 
 - C11 standard C
 - Makefile with the standard set of targets for GNU programs: all, install, uninstall, clean, dvi, dist, test, gcov_report.

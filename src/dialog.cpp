@@ -3,7 +3,7 @@
 #include "qcustomplot.h"
 #include "ui_dialog.h"
 extern "C" {
-#include "src/polish.h"
+#include "source/polish.h"
 }
 
 void Dialog::connect_slots() {
@@ -18,11 +18,11 @@ void Dialog::draw_graph() {
   int size_y = ui->verticalSlider->value();
   struct calculator_state state;
   QVector<double> x, y;
-  for (int i = -size_x / 2; i < size_x / 2; i += 1) {
-    double f_i = i * 0.3f;
+  for (int i = -size_x * 10; i < size_x * 10; i += 1) {
+    double f_i = i * 0.1f;
     double result = raw_calculate_with_x(equal, &state, f_i);
     if (!state.tkn_error) {
-      x.append(i);
+      x.append(i * 0.1f);
       y.append(result);
     }
   }

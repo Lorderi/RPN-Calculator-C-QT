@@ -1,6 +1,6 @@
 #include <check.h>
 
-#include "src/polish.h"
+#include "source/polish.h"
 
 bool is_equal_tokens(const struct token x, const struct token y) {
   bool equal_flag = OK;

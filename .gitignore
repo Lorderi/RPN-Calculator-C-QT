@@ -51,7 +51,6 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-# My gitignore
 *.gcno
 test
 polish

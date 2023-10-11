@@ -18,8 +18,8 @@ set(PROJECT_SOURCES
         main.cpp mainwindow.cpp
         mainwindow.h mainwindow.ui
         dialog.h dialog.cpp dialog.ui
-        src/polish.c src/polish.h
-        src/qcustomplot.cpp qcustomplot.h
+        source/polish.c source/polish.h
+        source/qcustomplot.cpp qcustomplot.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -72,7 +72,7 @@ set(SRC_DIR .)
 set(OBJ_DIR .)
 
 file(GLOB APP_SOURCES_CPP "${SRC_DIR}/*.cpp")
-file(GLOB APP_SOURCES "${SRC_DIR}/src/*.c")
+file(GLOB APP_SOURCES "${SRC_DIR}/source/*.c")
 file(GLOB TEST_FILE main_test.c)
 
 add_library(calc STATIC ${APP_SOURCES})
@@ -83,14 +83,14 @@ target_link_libraries(test calc check m pthread rt subunit)
 target_include_directories(calc PUBLIC ${SRC_DIR})
 
 add_custom_target(format
-    COMMAND find ${SRC_DIR} -maxdepth 1 -iname '*.cpp' -o -iname '*.c' -o -iname '*.h' | xargs clang-format -i -style=file:${CLANG-FORMAT-PATH}
-    COMMAND find ${SRC_DIR}/src -maxdepth 1 -iname '*.cpp' -o -iname '*.c' -o -iname '*.h' | xargs clang-format -i -style=file:${CLANG-FORMAT-PATH}
+    COMMAND find ${SRC_DIR} -maxdepth 1 -iname '*.cpp' -o -iname '*.c' -o -iname '*.h' | xargs clang-format -i -style=Google
+    COMMAND find ${SRC_DIR}/source -maxdepth 1 -iname '*.cpp' -o -iname '*.c' -o -iname '*.h' | xargs clang-format -i -style=Google
     COMMENT "Formatting code"
 )
 
 add_custom_target(test_format
-    COMMAND find ${SRC_DIR} -maxdepth 1 -iname '*.cpp' -o -iname '*.c' -o -iname '*.h' | xargs clang-format -n -style=file:${CLANG-FORMAT-PATH}
-    COMMAND find ${SRC_DIR}/src -maxdepth 1 -iname '*.cpp' -o -iname '*.c' -o -iname '*.h' | xargs clang-format -n -style=file:${CLANG-FORMAT-PATH}
+    COMMAND find ${SRC_DIR} -maxdepth 1 -iname '*.cpp' -o -iname '*.c' -o -iname '*.h' | xargs clang-format -n -style=Google
+    COMMAND find ${SRC_DIR}/source -maxdepth 1 -iname '*.cpp' -o -iname '*.c' -o -iname '*.h' | xargs clang-format -n -style=Google
     COMMENT "Checking code formatting"
 )
 
@@ -121,7 +121,7 @@ add_custom_target(gcov_report
 )
 
 add_custom_target(gcov_build
-    COMMAND gcc -std=c11 -Wall -Wextra -Werror --coverage main_test.c src/polish.c -lcheck -lm -lpthread -lrt -lsubunit -D_GNU_SOURCE -o test_cov
+    COMMAND gcc -std=c11 -Wall -Wextra -Werror --coverage main_test.c source/polish.c -lcheck -lm -lpthread -lrt -lsubunit -D_GNU_SOURCE -o test_cov
     COMMENT "Building for code coverage"
 )
 add_custom_target(dvi

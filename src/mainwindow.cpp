@@ -1,6 +1,5 @@
 #include "mainwindow.h"
 
-#include <QDebug>
 #include <QDir>
 #include <QInputDialog>
 #include <QMessageBox>
@@ -8,7 +7,7 @@
 #include "./ui_mainwindow.h"
 #include "dialog.h"
 extern "C" {
-#include "src/polish.h"
+#include "source/polish.h"
 }
 
 MainWindow::MainWindow(QWidget *parent)
@@ -80,7 +79,6 @@ void MainWindow::operations() {
   if (ui->labelResult->text() == "0") {
     equal = equal.chopped(1);
   }
-  qDebug() << button->text();
   equal += button->text();
 
   std::unordered_set<QString> validFunctions = {

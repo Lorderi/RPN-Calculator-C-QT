@@ -1,28 +1,28 @@
-Программа RPN_calculator:
+Program RPN_calculator:
 
-- Си стандарта C11
-- Makefile со стандартным набором целей для GNU-программ: all, install, uninstall, clean, dvi, dist, test, gcov_report.
-- Структурное программирование
+- C11 standard C
+- Makefile with the standard set of targets for GNU programs: all, install, uninstall, clean, dvi, dist, test, gcov_report.
+- Structured programming
 - Google Style
-- Покрытие unit-тестами модулей, связанных с вычислением выражений (check.h)
-- Реализация с графическим пользовательским интерфейсом (Qt)
-- На вход подаваются как целые числа, так и вещественные числа, записанные через точку
-- Вычисление скобочных арифметических выражений, и с подстановкой значения переменной _x_ в виде числа
-- Построение графика функции (QCustomPlot.h), с переменной _x_
-- Проверяемая точность дробной части - 7 знаков после запятой
-- Скобочные арифметические выражения поддерживают арифметические операции и математические функции:
-    - *Арифметические операторы*: \
-        Скобки: (a + b) \
-        Вычитание: a - b \
-        Сложение: a + b \
-        Деление: a / b \
-        Умножение: a * b \
-        Остаток от деления: a mod b \
-        Возведение в степень: a ^ b \
-        Вычисление процента: a % \
-        Изменение знака: a +/-
+- Unit-test coverage of modules related to expression evaluation (check.h)
+- Implementation with graphical user interface (Qt)
+- Both integers and real numbers written with a dot as inputs.
+- Calculation of bracketed arithmetic expressions, and with substitution of the _x_ variable value as a number.
+- Plotting a function (QCustomPlot.h), with the _x_ variable.
+- Verifiable fractional precision - 7 decimal places
+- Stapled arithmetic expressions support arithmetic operations and math functions:
+    - *Arithmetic operators: \
+        Parentheses: (a + b) \
+        Subtraction: a - b \
+        Addition: a + b \
+        Division: a / b \
+        Multiplication: a * b \
+        Remainder of division: a mod b \
+        Increasing to a degree: a ^ b \
+        Percentage calculation: a % \
+        Change sign: a +/-
 
-    - *Функции*: \
+    - *Functions*: \
         sin(x) \
         asin(x) \
         cos(x) \
@@ -30,5 +30,5 @@
         tan(x) \
         atan(x) \
         sqrt(x) \
-        Натуральный логарифм: ln(x) \
-        Десятичный логарифм: log(x)
+        Natural logarithm: ln(x) \
+        Decimal logarithm: log(x)

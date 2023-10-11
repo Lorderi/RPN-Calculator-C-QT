@@ -1,0 +1,81 @@
+# Prerequisites
+*.d
+
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Linker output
+*.ilk
+*.map
+*.exp
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Kernel Module Compile Results
+*.mod*
+*.cmd
+.tmp_versions/
+modules.order
+Module.symvers
+Mkfile.old
+dkms.conf
+
+# My gitignore
+*.gcno
+test
+polish
+*.CMakeFiles
+*.json
+build-src-Desktop-Debug
+CMakeFiles
+*.cmake
+CMakeCache.txt
+calc_autogen
+test_autogen
+build
+*.gcda
+*.info
+report
+.vscode
+test_cov
+*.toc
+*.log
+*.dvi
+*.cps
+*.cp
+*.aux
+calc_prod_autogen
+install_manifest.txt
+calc_prod
+CMakeLists.txt.user
